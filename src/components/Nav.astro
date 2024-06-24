@@ -1,9 +1,8 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection } from "astro:content";
 
-
-
-const pages = await getCollection("modulos")
+const pages = await getCollection("modulos");
+const modulesPath = Astro.url.pathname.startsWith("/modulos/");
 ---
 
 <style>
@@ -16,6 +15,7 @@ const pages = await getCollection("modulos")
 		box-shadow: 0 0.2rem 0.4rem hsla(0, 0%, 0%, 10%);
 		background-color: hsl(0, 0%, 100%);
 		padding: 1rem;
+		flex-wrap: wrap;
 	}
 
 	nav .title {
@@ -58,11 +58,12 @@ const pages = await getCollection("modulos")
 	<a href="/" class="title">Academia deportiva</a>
 	<ul>
 		{
-			pages.map((page) => (
-				<li>
-					<a href={page.slug}>{page.data.title}</a>
-				</li>
-			))
+			modulesPath &&
+				pages.map((page) => (
+					<li>
+						<a href={page.slug}>{page.data.title}</a>
+					</li>
+				))
 		}
 	</ul>
 </nav>
