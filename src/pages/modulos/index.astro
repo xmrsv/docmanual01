@@ -1,0 +1,20 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+import { getCollection, getEntry } from "astro:content";
+
+const allModules = await getCollection("modulos");
+---
+
+<MainLayout title="Modulos">
+	<h1>Modulos</h1>
+	<ul>
+		{
+			allModules.map((modules) => (
+				<li>
+					<a href={"modulos/" + modules.slug}>{modules.data.title}</a>
+				</li>
+			))
+		}
+	</ul>
+</MainLayout>
