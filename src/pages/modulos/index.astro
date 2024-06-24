@@ -6,6 +6,22 @@ import { getCollection, getEntry } from "astro:content";
 const allModules = await getCollection("modulos");
 ---
 
+<style>
+
+	ul {
+		padding: 0;
+		list-style: none
+	}
+	ul li {
+		margin-block-end: 1rem;
+	}
+
+	ul li a {
+		max-width: fit-content;
+		display: block;
+	}
+</style>
+
 <MainLayout title="Modulos">
 	<h1>Modulos</h1>
 	<ul>

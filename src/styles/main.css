@@ -8,6 +8,7 @@ body {
 main {
 	margin: auto;
 	max-width: 80ch;
+    padding: 1rem;
 }
 
 pre,

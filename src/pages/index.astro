@@ -3,9 +3,24 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 
 ---
+
+<style>
+	a {
+		border-radius: 4rem;
+		max-width: fit-content;
+		background-color: hsl(228, 88%, 47%);
+		display: block;
+		text-decoration: none;
+		padding: 1rem 1.25rem;
+		color: hsla(0, 0%, 100%, 0.977);
+		font-weight: 500;
+	}
+</style>
 <MainLayout title="Inicio">
 
-	<h1>Bienvenido</h1>
+	<h1>Documetación API Academia Deportiva</h1>
+
+	<p>Explora como comunicarte con la API con la ayuda de esta documentación</p>
 
 	<a href="/modulos">Ver modulos</a>
 

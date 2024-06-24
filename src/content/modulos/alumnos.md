@@ -5,56 +5,24 @@ description: "Descripción"
 lastUpdate: 2024-06-24
 ---
 
-## API de Academia Deportiva - Módulo de Alumnos
+Modulo de alumnos
 
-Este módulo permite gestionar la información de los alumnos de la Academia Deportiva.
+**Requiere autenticación: sí**, Necesitas adjutar el token como Autenticación Bearer Token para poder acceder a todos los endpoints de Alumnos
 
-### Autenticación
+## Obtener alumnos
 
-La API utiliza JWT (JSON Web Tokens) para la autenticación. Para acceder a las rutas protegidas, se debe incluir un token JWT válido en la cabecera `Authorization` de la solicitud, con el formato `Bearer <token>`.
+Has una petición simple usando el método GET al siguiente endpoint:
 
-**Endpoints de autenticación:**
+```api
+/api/alumnos
+```
 
-**URL Base:** `/auth`
+## Obtener un alumno por id
 
-- **Login:**
-  - **Método:** POST
-  - **Ruta:** `/auth/login`
-  - **Descripción:** Permite a un usuario registrado obtener un token JWT.
-  - **Cuerpo de la solicitud:** Objeto JSON con el nombre de usuario y contraseña.
+Para obtener un alumno por id utiliza el método GET especificando el id en el endpoint, obtendremos el usuario con id 1 como ejemplo:
 
-  ```json
-  {
-   "username": "usuario",
-   "password": "contraseña"
-  }
-  ```
+**Endpoint de alumno por id**
 
-  - **Respuesta exitosa (200 OK):** Objeto JSON con el token JWT.
-
-  ```json
-  {
-   "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c3VhcmlvIiwiZXhwIjoxNjgzMzU0MjA2LCJpYXQiOjE2ODMzE4MjA2fQ.token"
-  }
-  ```
-
-- **Registro:**
-  - **Método:** POST
-  - **Ruta:** `/auth/register`
-  - **Descripción:** Permite registrar un nuevo usuario.
-  - **Cuerpo de la solicitud:** Objeto JSON con la información del nuevo usuario.
-
-  ```json
-  {
-   "username": "nuevo_usuario",
-   "password": "contraseña"
-  }
-  ```
-
-  - **Respuesta exitosa (200 OK):** Objeto JSON con el token JWT del nuevo usuario.
-
-  ```json
-  {
-   "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c3VhcmlvIiwiZXhwIjoxNjgzMzU0MjA2LCJpYXQiOjE2ODMzE4MjA2fQ.token"
-  }
-  ```
+```api
+/api/alumno/1
+```
